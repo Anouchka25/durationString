@@ -4,7 +4,7 @@ public class DurationString {
 	
 	private static final String INVALID_MESSAGE = "Invalid value";
 	
-	private static final String getDurationString(long minutes, long seconds) {
+	public static final String getDurationString(long minutes, long seconds) {
 		if((minutes < 0) || (seconds < 0) || (seconds > 59)) {
 			
 			return INVALID_MESSAGE ;
@@ -31,6 +31,17 @@ public class DurationString {
 		}
 		
 		return hoursString + " "+minutesString+ " "+secondsString+ " ";
+	}
+	
+	public static String getDurationString(long seconds) {
+		if(seconds < 0) {
+			return INVALID_MESSAGE ;
+		}
+		
+		long minutes = seconds / 60;
+		long remainingSeconds = seconds % 60; // le restant des secondes
+		
+		return getDurationString(minutes, remainingSeconds);
 	}
 
 }
