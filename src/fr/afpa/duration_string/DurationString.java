@@ -43,5 +43,10 @@ public class DurationString {
 		
 		return getDurationString(minutes, remainingSeconds);
 	}
+	
+	public static void main(String[] args) {
+		System.out.println(getDurationString(65, 45));
+
+	}
 
 }
